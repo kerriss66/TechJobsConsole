@@ -120,8 +120,21 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            if (someJobs.Count == 0)
+            {
+                Console.WriteLine("No Results Found");
+            }
+
+            foreach (Dictionary<string, string> jobs in someJobs)
+            {
+                foreach (KeyValuePair<string, string> job in jobs)
+                {
+
+                    Console.WriteLine("{0} {1}", job.Key, job.Value);
+                }
+            }
             //Console.WriteLine("printJobs is not implemented yet");
-            int count = someJobs.Count;
+            /*int count = someJobs.Count;
             if (count == 0)
             {
                 Console.WriteLine("No result");
@@ -139,7 +152,7 @@ namespace TechJobsConsole
                     Console.WriteLine("*****\n\n");
                 }
 
-            }
+            }*/
         }
     }
 }
